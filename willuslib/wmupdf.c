@@ -28,7 +28,7 @@
 #endif
 
 #ifdef HAVE_MUPDF_LIB
-#include <mupdf/pdf.h>
+#include <mupdf.h>
 
 static void wpdfbox_determine_original_source_position(WPDFBOX *box);
 static void wpdfbox_unrotate(WPDFBOX *box,double deg);

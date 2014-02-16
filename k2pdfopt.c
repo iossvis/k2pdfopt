@@ -45,6 +45,9 @@ int main(int argc,char *argv[])
 
     k2conv=&_k2conv;
     k2pdfopt_conversion_init(k2conv);
+    /* behave more unix-like */
+    /*k2settings->query_user = 0; */
+    k2settings->exit_on_complete = 1;
     k2settings=&k2conv->k2settings;
     cmdline=&_cmdline;
     env=&_env;

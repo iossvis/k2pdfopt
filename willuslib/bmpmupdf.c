@@ -23,7 +23,7 @@
 #include "willus.h"
 
 #ifdef HAVE_MUPDF_LIB
-#include <mupdf/pdf.h>
+#include <mupdf.h>
 
 static int bmpmupdf_pixmap_to_bmp(WILLUSBITMAP *bmp,fz_context *ctx,fz_pixmap *pixmap);
 
@@ -59,7 +59,7 @@ int bmpmupdf_pdffile_to_bmp(WILLUSBITMAP *bmp,char *filename,int pageno,double d
     fz_set_aa_level(ctx,8);
 //    fz_accelerate();
 //    glyphcache=fz_new_glyph_cache();
-    colorspace=(bpp==8 ? fz_device_gray(ctx) : fz_device_rgb(ctx));
+    colorspace=(bpp==8 ? fz_device_gray : fz_device_rgb);
     fz_try(ctx) { doc=fz_open_document(ctx,filename); }
     fz_catch(ctx) 
         { 

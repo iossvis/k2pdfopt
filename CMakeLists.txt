@@ -51,7 +51,7 @@ endif(JPEG_FOUND)
 
 include(FindJasper)
 if(JASPER_FOUND)
-  set(HAVE_JASPER_LIB 1)
+#  set(HAVE_JASPER_LIB 1)
 endif(JASPER_FOUND)
 
 # paths from willuslib/wgs.c
